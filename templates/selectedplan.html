@@ -23,16 +23,8 @@
         </thead>
         
         <tbody>
-          
-          {% for i in planDetails %}
-          <tr>
-            <th scope="row">{{ forloop.counter }}</th>
-            <td>{{i.trainingPackage}}</td>
-            <td>{{i.trainingPlansPrice}}</td>
-            <td>{{i.trainingDurationinWeeks}}</td>
-            <td>{{i.trainingsheet}}</td>
-          </tr>   
-          {% endfor %}       
+          {{planDetail}}
+            
         </tbody>
         
       </table>

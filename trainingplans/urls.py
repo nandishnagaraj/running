@@ -1,7 +1,5 @@
 from django.urls import  path
 from . import views
-
-
 urlpatterns = [
-    path('<int:pk>/',views.trainingplans),
+    path('<int:pk>/',views.trainingDetails),
 ]

@@ -26,7 +26,7 @@
           
           {% for i in plans %}
           <tr>
-            <th scope="row">{{ forloop.counter }}</th>
+            <th scope="row">{{ forloop.counter }}{{i.id}}</th>
             <td>{{i.trainingPackage}}</td>
             <td>{{i.trainingPlansPrice}}</td>
             <td>{{i.trainingDurationinWeeks}}</td>
