@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'trainingplans',
-    'import_export',
+    'customer',
+    'order',
 ]
 
 MIDDLEWARE = [

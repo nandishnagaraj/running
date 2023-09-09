@@ -4,11 +4,16 @@ from django.db import models
 # Create your models here.
 
 class TrainingPlans(models.Model):
-    trainingPackage = models.CharField(max_length=255)
+    trainingPackageName = models.CharField(max_length=255)
     trainingPlansPrice = models.PositiveIntegerField()
     trainingDurationinWeeks = models.PositiveIntegerField()
-    trainingsheet = models.FileField(upload_to='plans')
+    traininglevel = models.CharField(max_length=255,choices=[('1','Level 1'),('2','Level II'),('3','Level III')],default="1")
+
 
 
     def __str__(self) -> str:
         return self.trainingPackage
+    
+    class Meta():
+        verbose_name_plural = 'TrainingPlans'
+        verbose_name = 'TrainingPlan'
