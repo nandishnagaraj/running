@@ -1,15 +1,17 @@
 from django.db import models
 
 from customer.models import Customer
+from trainingplans.models import TrainingPlans
 
 # Create your models here.
 class Order(models.Model):
-    OrderId = models.AutoField(primary_key=True)
+    OrderId = models.AutoField(primary_key=True,auto_created=True)
     CustomerInfo = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    Total_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    TrainingPlans = models.ManyToManyField(TrainingPlans)
+    OrderDate = models.DateTimeField(auto_now_add=True)
     
     def __str__(self) -> str:
-        return self.CustomerInfo.EmailID+" - "+str(self.OrderId)
+        return self.CustomerInfo.emailID+" - "+str(self.OrderId) +" - "+str(self.OrderDate)
     
     class Meta:
         verbose_name_plural = 'Orders'
