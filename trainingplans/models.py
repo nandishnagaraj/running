@@ -8,8 +8,7 @@ class TrainingPlans(models.Model):
     trainingPlansPrice = models.PositiveIntegerField()
     trainingDurationinWeeks = models.PositiveIntegerField()
     traininglevel = models.CharField(max_length=255,choices=[('1','Level 1'),('2','Level II'),('3','Level III')],default="1")
-
-
+    imageInfo = models.ImageField(upload_to ='media/',default='Pranesh__Bangalore_Marathon_.xlsx')
 
     def __str__(self) -> str:
         return self.trainingPackage
