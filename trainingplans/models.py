@@ -9,7 +9,11 @@ class TrainingPlans(models.Model):
     trainingPlansPrice = models.DecimalField(max_digits=15, decimal_places=2)
     trainingDurationinWeeks = models.PositiveIntegerField()
     traininglevel = models.CharField(max_length=255,choices=[('1','Level 1'),('2','Level II'),('3','Level III')],default="1")
-    imageInfo = models.ImageField(upload_to ='media/',default='Pranesh__Bangalore_Marathon_.xlsx')
+    imageInfo = models.ImageField(upload_to ='media/plans',default='static/images/items/running1.jpg')
+    trainingPlandShortDescription = models.TextField(max_length=500, blank=True)
+    trainingPlandLongDescription = models.TextField(max_length=2500, blank=True)
+    created_date    = models.DateTimeField(auto_now_add=True)
+    modified_date   = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
         return self.trainingPackageName
