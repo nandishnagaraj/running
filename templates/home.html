@@ -27,7 +27,9 @@
 		<div class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
 			<div class="card d-flex position-relative flex-column">
 				<div class='imgContainer'>
+					<a href="{{plan.get_url}}">
 					<img src='{{ plan.imageInfo.url }}'>
+					</a>
 				</div>
 				<div class="content">
 					<h2>{{plan.trainingPackageName}}</h2>
@@ -37,6 +39,7 @@
 			</div>
 		</div>
 	</div>
+	
 	{% endfor %}
 </div> <!-- row.// -->
 

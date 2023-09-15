@@ -1,5 +1,6 @@
 from django import forms
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -21,3 +22,7 @@ class TrainingPlans(models.Model):
     class Meta():
         verbose_name_plural = 'TrainingPlans'
         verbose_name = 'TrainingPlan'
+
+
+    def get_url(self):
+        return reverse('plandetails',args=[self.trainingPlanID])
