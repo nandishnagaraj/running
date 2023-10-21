@@ -37,3 +37,63 @@ server {
                 proxy_pass http://unix:/run/gunicorn.sock;
         }
 }
+
+
+
+
+73  ps aux | grep gunicorn
+   74  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+   75  gunicorn --bind 0.0.0.0:8000 --static /static/ greatkart.wsgi:application
+   76  ls
+   77  gunicorn --bind 0.0.0.0:8000 --static static greatkart.wsgi:application
+   78  gunicorn --bind 0.0.0.0:8000 --static ./static greatkart.wsgi:application
+   79  clear
+   80  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+   81  clear
+   82  cd greatkart/
+   83  nano settings.py 
+   84  cd ..
+   85  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+   86  ufw allow 8000
+   87  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+   88  clear
+   89  python3 manage.py runserver 0.0.0.0:8000
+   90  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+   91  clear
+   92  nano /etc/systemd/system/gunicorn.socket
+   93  nano /etc/systemd/system/gunicorn.service
+   94  systemctl start gunicorn.socket
+   95  systemctl status gunicorn.socket
+   96  systemctl enable gunicorn.socket
+   97  cd /etc/nginx
+   98  sudo apt-get update
+   99  sudo apt-get install nginx
+  100  cd /etc/nginx
+  101  ls
+  102  cd /home/nandish_nagaraj/Running2
+  103  nano /etc/nginx/sites-available/greatkart
+  104  sudo ln -s /etc/nginx/sites-available/greatkart /etc/nginx/sites-enabled
+  105  nginx -t
+  106  systemctl restart nginx
+  107  ufw allow 'Nginx Full'
+  108  ufw delete allow 8000
+  109  ps aux | grep gunicorn
+  110  systemctl start gunicorn.socket
+  111  systemctl status gunicorn.socket
+  112  systemctl enable gunicorn.socket
+  113  ps aux | grep gunicorn
+  114  clear
+  115  gunicorn --bind unix:/run/gunicorn.sock greatkart.wsgi:application
+  116  clear
+  117  cat /etc/systemd/system/gunicorn.service
+  118  cat /etc/systemd/system/gunicorn.socket
+  119  cat /etc/nginx/sites-available/greatkart
+  120  sudo ln -s /etc/nginx/sites-available/greatkart /etc/nginx/sites-enabled
+  121  systemctl status nginx
+  122  cat /home/nandish_nagaraj/Running2/gunicorn.error.log
+  123  systemctl restart gunicorn
+  124  systemctl status gunicorn
+  125  nano /etc/systemd/system/gunicorn.service
+  126  systemctl daemon-reload
+  127  systemctl restart gunicorn
+  128  systemctl status gunicorn
