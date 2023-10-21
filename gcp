@@ -8,7 +8,7 @@ After=network.target
 User=nandish_nagaraj
 Group=www-data
 WorkingDirectory=/home/nandish_nagaraj/Running2/greatkart
-ExecStart=/home/nandish_nagaraj/Running2/greatkart/env/bin/gunicorn --workers 3 --bind unix:/run/gunicorn.sock greatkart.wsgi:application
+ExecStart=/home/nandish_nagaraj/Running2/env/bin/gunicorn --workers 3 --bind unix:/run/gunicorn.sock greatkart.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
