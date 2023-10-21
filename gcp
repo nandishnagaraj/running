@@ -1,0 +1,39 @@
+                                                                                                                                                                                                        
+[Unit]
+Description=gunicorn demon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=nandish_nagaraj
+Group=www-data
+WorkingDirectory=/home/nandish_nagaraj/Running2/greatkart
+ExecStart=/home/nandish_nagaraj/Running2/greatkart/env/bin/gunicorn --workers 3 --bind unix:/run/gunicorn.sock greatkart.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
+
+[Unit]
+Description=gunicorn.socket
+
+[Socket]
+ListenStream=/run/gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
+
+
+
+server {
+        listen 80;
+        server_name 34.93.95.35;
+
+        location /static/ {
+                root /home/nandish_nagaraj/Running2;
+        }
+        location /{
+                include proxy_params;
+                proxy_pass http://unix:/run/gunicorn.sock;
+        }
+}
