@@ -41,59 +41,142 @@ server {
 
 
 
-73  ps aux | grep gunicorn
-   74  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
-   75  gunicorn --bind 0.0.0.0:8000 --static /static/ greatkart.wsgi:application
-   76  ls
-   77  gunicorn --bind 0.0.0.0:8000 --static static greatkart.wsgi:application
-   78  gunicorn --bind 0.0.0.0:8000 --static ./static greatkart.wsgi:application
+1  apt-get update
+    2  cd /home
+    3  ls
+    4  cd nandish_nagaraj/
+    5  ls
+    6  apt-get install git
+    7  git clone https://github.com/nandishnagaraj/Running2.git
+    8  ls
+    9  python3 --version
+   10  cd Running2/
+   11  ls
+   12  rm -r env
+   13  python3 -m venv env
+   14  apt-get install python3-venv
+   15  python3 -m venv env
+   16  source env/bin/activate
+   17  pip install -r requirements.txt --upgrade
+   18  pip install -r requirements.txt --upgrade
+   19  apt-get install pip
+   20  pip install -r requirements.txt --upgrade
+   21  cd Running2/
+   22  pip install -r requirements.txt --upgrade
+   23  source env/bin/activate
+   24  pip install -r requirements.txt --upgrade
+   25  cd env/bin/
+   26  ls
+   27  pip install gunicorn
+   28  ls
+   29  clear
+   30  cd ..
+   31  cd ..
+   32  cd greatkart/
+   33  ls
+   34  cd ..
+   35  ls
+   36  source env/bin/activate
+   37  python3 manage.py runserver
+   38  python3 manage.py runserver 0.0.0.0:8000
+   39  clear
+   40  python3 manage.py runserver 0:8000
+   41  python3 manage.py runserver 0.0.0.0:8000
+   42  source env/bin/activate
+   43  cd Running2/
+   44  source env/bin/activate
+   45  python3 manage.py runserver 0.0.0.0:8000
+   46  clear
+   47  pip install gunicorn psycopg2
+   48  clear
+   49  pip install --upgrade pip setuptools
+   50  sudo apt-get install libpq-dev
+   51  pip install psycopg2
+   52  python3 manage.py runserver 0.0.0.0:8000
+   53  cd greatkart/
+   54  nano settings.py 
+   55  python3 manage.py runserver
+   56  cd ..
+   57  python3 manage.py runserver
+   58  python3 manage.py runserver 0.0.0.0:8000
+   59  clear
+   60  apt install ufw
+   61  ufw allow 8000
+   62  python3 manage.py runserver 0.0.0.0:8000
+   63  clear
+   64  cd Running2/
+   65  python3 manage.py runserver 0.0.0.0:8000
+   66  clear
+   67  source env/bin/activate
+   68  python3 manage.py runserver 0.0.0.0:8000
+   69  clear
+   70  cd greatkart/
+   71  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+   72  cd ..
+   73  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+   74  cd Running2/
+   75  source env/bin/activate
+   76  clear
+   77  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+   78  ls
    79  clear
    80  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
-   81  clear
-   82  cd greatkart/
-   83  nano settings.py 
-   84  cd ..
+   81  ps aux | grep gunicorn
+   82  kill 10635
+   83  kill 11095
+   84  ps aux | grep gunicorn
    85  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
-   86  ufw allow 8000
-   87  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
-   88  clear
-   89  python3 manage.py runserver 0.0.0.0:8000
-   90  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
-   91  clear
-   92  nano /etc/systemd/system/gunicorn.socket
-   93  nano /etc/systemd/system/gunicorn.service
-   94  systemctl start gunicorn.socket
-   95  systemctl status gunicorn.socket
-   96  systemctl enable gunicorn.socket
-   97  cd /etc/nginx
-   98  sudo apt-get update
-   99  sudo apt-get install nginx
-  100  cd /etc/nginx
-  101  ls
-  102  cd /home/nandish_nagaraj/Running2
-  103  nano /etc/nginx/sites-available/greatkart
-  104  sudo ln -s /etc/nginx/sites-available/greatkart /etc/nginx/sites-enabled
-  105  nginx -t
-  106  systemctl restart nginx
-  107  ufw allow 'Nginx Full'
-  108  ufw delete allow 8000
-  109  ps aux | grep gunicorn
-  110  systemctl start gunicorn.socket
-  111  systemctl status gunicorn.socket
-  112  systemctl enable gunicorn.socket
-  113  ps aux | grep gunicorn
-  114  clear
-  115  gunicorn --bind unix:/run/gunicorn.sock greatkart.wsgi:application
-  116  clear
-  117  cat /etc/systemd/system/gunicorn.service
-  118  cat /etc/systemd/system/gunicorn.socket
-  119  cat /etc/nginx/sites-available/greatkart
-  120  sudo ln -s /etc/nginx/sites-available/greatkart /etc/nginx/sites-enabled
-  121  systemctl status nginx
-  122  cat /home/nandish_nagaraj/Running2/gunicorn.error.log
-  123  systemctl restart gunicorn
-  124  systemctl status gunicorn
-  125  nano /etc/systemd/system/gunicorn.service
-  126  systemctl daemon-reload
-  127  systemctl restart gunicorn
-  128  systemctl status gunicorn
+   86  gunicorn --bind 0.0.0.0:8000 --static /static/ greatkart.wsgi:application
+   87  ls
+   88  gunicorn --bind 0.0.0.0:8000 --static static greatkart.wsgi:application
+   89  gunicorn --bind 0.0.0.0:8000 --static ./static greatkart.wsgi:application
+   90  clear
+   91  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+   92  clear
+   93  cd greatkart/
+   94  nano settings.py 
+   95  cd ..
+   96  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+   97  ufw allow 8000
+   98  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+   99  clear
+  100  python3 manage.py runserver 0.0.0.0:8000
+  101  gunicorn --bind 0.0.0.0:8000 greatkart.wsgi:application
+  102  clear
+  103  nano /etc/systemd/system/gunicorn.socket
+  104  nano /etc/systemd/system/gunicorn.service
+  105  systemctl start gunicorn.socket
+  106  systemctl status gunicorn.socket
+  107  systemctl enable gunicorn.socket
+  108  cd /etc/nginx
+  109  sudo apt-get update
+  110  sudo apt-get install nginx
+  111  cd /etc/nginx
+  112  ls
+  113  cd /home/nandish_nagaraj/Running2
+  114  nano /etc/nginx/sites-available/greatkart
+  115  sudo ln -s /etc/nginx/sites-available/greatkart /etc/nginx/sites-enabled
+  116  nginx -t
+  117  systemctl restart nginx
+  118  ufw allow 'Nginx Full'
+  119  ufw delete allow 8000
+  120  ps aux | grep gunicorn
+  121  systemctl start gunicorn.socket
+  122  systemctl status gunicorn.socket
+  123  systemctl enable gunicorn.socket
+  124  ps aux | grep gunicorn
+  125  clear
+  126  gunicorn --bind unix:/run/gunicorn.sock greatkart.wsgi:application
+  127  clear
+  128  cat /etc/systemd/system/gunicorn.service
+  129  cat /etc/systemd/system/gunicorn.socket
+  130  cat /etc/nginx/sites-available/greatkart
+  131  sudo ln -s /etc/nginx/sites-available/greatkart /etc/nginx/sites-enabled
+  132  systemctl status nginx
+  133  cat /home/nandish_nagaraj/Running2/gunicorn.error.log
+  134  systemctl restart gunicorn
+  135  systemctl status gunicorn
+  136  nano /etc/systemd/system/gunicorn.service
+  137  systemctl daemon-reload
+  138  systemctl restart gunicorn
+  139  systemctl status gunicorn
