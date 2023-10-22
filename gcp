@@ -50,7 +50,12 @@ chdir = '/home/nandish_nagaraj/Running2/env/bin/'
 module = 'greatkart.wsgi:application'
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+ALTER ROLE nnk SET default_transaction_isolation TO 'read committed'
+create user <username> WITH PASSWORD '<password>'
+ALTER ROLE nnk SET client_encoding TO 'utf8'
+CREATE Database svedah
 
+========================================================================================================================================================
 1  apt-get update
     2  cd /home
     3  ls
