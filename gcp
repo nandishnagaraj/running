@@ -55,7 +55,12 @@ create user <username> WITH PASSWORD '<password>'
 ALTER ROLE nnk SET client_encoding TO 'utf8'
 CREATE Database svedah
 ALTER ROLE nnk SET timezone TO 'UTC'
-GRANT ALL PRIVILEGES on DATABASE svedah to nnk
+GRANT ALL PRIVILEGES on DATABASE svedah to nnk;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO nnk;
+
+GRANT CONNECT ON DATABASE svedah TO nnk;
+
+GRANT USAGE, CREATE ON SCHEMA public TO nnk;
 
 ========================================================================================================================================================
 1  apt-get update
