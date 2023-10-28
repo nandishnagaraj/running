@@ -202,3 +202,4 @@ GRANT USAGE, CREATE ON SCHEMA public TO nnk;
   137  systemctl daemon-reload
   138  systemctl restart gunicorn
   139  systemctl status gunicorn
+sudo journalctl -u nginx
