@@ -218,3 +218,4 @@ sudo apt install certbot python3-certbot-nginx
   518  sudo ufw reload
   519  sudo certbot --nginx -d svedah.co.in
 sudo certbot --nginx -d svedah.co.in
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-debian-11
