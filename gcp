@@ -203,3 +203,18 @@ GRANT USAGE, CREATE ON SCHEMA public TO nnk;
   138  systemctl restart gunicorn
   139  systemctl status gunicorn
 sudo journalctl -u nginx
+sudo apt install certbot python3-certbot-nginx
+  507  sudo ufw status
+  508  sudo ufw allow 'Nginx Full'
+  509  sudo ufw status
+  510  nano /etc/nginx/sites-available/greatkart
+  511  sudo nginx -t
+  512  sudo ufw status
+  513  sudo ufw enable
+  514  sudo ufw status
+  515  sudo ufw allow 443/tcp
+  516  sudo ufw allow out 53,80,443/tcp
+  517  sudo ufw status
+  518  sudo ufw reload
+  519  sudo certbot --nginx -d svedah.co.in
+sudo certbot --nginx -d svedah.co.in
