@@ -63,6 +63,40 @@ GRANT CONNECT ON DATABASE svedah TO nnk;
 GRANT USAGE, CREATE ON SCHEMA public TO nnk;
 
 ========================================================================================================================================================
+
+
+server {
+        server_name svedah.co.in www.svedah.co.in ;
+
+        location /static/ {
+                root /home/nandish_nagaraj/Running2;
+        }
+        location /{
+                include proxy_params;
+                proxy_pass http://unix:/run/gunicorn.sock;
+        }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/svedah.co.in/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/svedah.co.in/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = svedah.co.in) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+        listen 80;
+        server_name svedah.co.in www.svedah.co.in ;
+    return 404; # managed by Certbot
+
+
+}
+
+========================================================================================================================================================
 1  apt-get update
     2  cd /home
     3  ls
